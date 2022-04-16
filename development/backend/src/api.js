@@ -406,20 +406,22 @@ const allActive = async (req, res) => {
   const countQs = 'SELECT count(*) FROM record_comment WHERE linked_record_id = ?';
   const searchLastQs = 'SELECT * FROM record_last_access WHERE user_id = ? and record_id = ?';
 
+  const resObj = {
+    recordId: null,
+    title: '',
+    applicationGroup: null,
+    applicationGroupName: null,
+    createdBy: null,
+    createdByName: null,
+    createAt: '',
+    commentCount: 0,
+    isUnConfirmed: true,
+    thumbNailItemId: null,
+    updatedAt: '',
+  };
+
   for (let i = 0; i < recordResult.length; i++) {
-    const resObj = {
-      recordId: null,
-      title: '',
-      applicationGroup: null,
-      applicationGroupName: null,
-      createdBy: null,
-      createdByName: null,
-      createAt: '',
-      commentCount: 0,
-      isUnConfirmed: true,
-      thumbNailItemId: null,
-      updatedAt: '',
-    };
+
 
     const line = recordResult[i];
     mylog(line);
