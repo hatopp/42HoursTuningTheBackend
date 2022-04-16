@@ -290,7 +290,7 @@ const tomeActive = async (req, res) => {
   const searchGroupQs = 'SELECT * FROM group_info WHERE group_id = ?';
   const searchThumbQs =
     'SELECT * FROM record_item_file WHERE linked_record_id = ? order by item_id asc limit 1';
-  const countQs = 'SELECT count(linced_record_id) from record_comment WHERE linked_record_id = ?';
+  const countQs = 'SELECT count(*) from record_comment WHERE linked_record_id = ?';
   const searchLastQs = 'SELECT * FROM record_last_access WHERE user_id = ? AND record_id = ?';
 
   for (let i = 0; i < recordResult.length; i++) {
