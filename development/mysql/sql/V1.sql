@@ -1,3 +1,9 @@
+-- SELECT *
+-- FROM group_info 
+-- LEFT JOIN group_member
+-- ON group_info.group_id=group_member.group_id;
+
+
 ALTER TABLE session ADD INDEX i1(value); --where
 ALTER TABLE record ADD INDEX i2(record_id); --where
 -- ALTER TABLE group_member ADD INDEX i3(user_id); AND...
